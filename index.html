@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>My Portofolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=JetBrains Mono"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Prolog Section -->
+    <section id="prolog">
+      <div class="container">
+        <div class="intro-container">
+          <h1 id="main-heading" class="text-center">
+            &lt; Hello, I'm <span class="name">Fajar</span> Adie Santosa /&gt;
+          </h1>
+          <p id="description" class="text-center">
+            <span id="typed-text"></span><span class="cursor">|</span>
+          </p>
+          <div class="social-icons">
+            <div class="social-item">
+              <a href="https://github.com/fnvrxx" target="_blank">
+              <img src="./src/icon/github.png" alt="GitHub" class="social-icon" />
+              <!-- </a> -->
+              <span class="social-label">github</span>
+            </div>
+            <div class="social-item">
+              <a
+                href="https://www.linkedin.com/in/fajar-adie-santosa/"
+                target="_blank"
+              >
+                <img
+                  src="./src/icon/linkedln.png"
+                  alt="linkedin"
+                  class="social-icon-linkedin"
+                />
+              </a>
+              <span class="social-label">linkedin</span>
+            </div>
+            <div class="social-item">
+              <a href="https://www.instagram.com/fajardiyos/" target="_blank">
+                <img
+                  src="./src/icon/instagram.png"
+                  alt="instagram"
+                  class="social-icon"
+                />
+              </a>
+              <span class="social-label">instagram</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-8">
+            <h2 class="section-title">About Me</h2>
+            <p class="paragraph">
+              Hello, my name is Fajar Adie Santosa, and I come from Yogyakarta,
+              Indonesia. I am an ambitious learner with a strong passion for
+              technology, especially in the fields of algorithms and
+              programming. I also have a deep appreciation for numbers, which I
+              see as a form of art.
+            </p>
+
+            <h2 class="section-title">My Journey</h2>
+            <p class="paragraph">
+              My journey started from curiosity – wondering how things work and
+              why numbers make so much sense. That curiosity slowly pulled me
+              into the world of algorithms and programming, where logic meets
+              creativity. Along the way, I realized that doing everything alone
+              isn't always the best way. I enjoy working with others – sharing
+              ideas, solving problems together, and laughing through the chaos
+              when things don't go as planned. Teamwork keeps things fun and
+              meaningful. For me, every project is more than just getting things
+              done – it's about the people I meet, the lessons I learn, and the
+              little stories that happen in between.
+            </p>
+          </div>
+          <div class="col-lg-4 text-center">
+            <img src="./src/icon/my-face.png" alt="Profile" class="profile-img" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+      <div class="container">
+        <h2 class="section-title text-center">Education</h2>
+        <div class="education-content">
+          <h3>Bachelor's Degree (Bachelor of Mathematics)</h3>
+          <p class="institution">Institut Teknologi Sepuluh Nopember</p>
+          <p class="department">Department of Mathematics</p>
+          <p class="period">August 2022 - Present (Currently semester 7)</p>
+        </div>
+      </div>
+    </section>
+
+   <!-- My Project Section -->
+<!-- My Project Section -->
+<section id="my-project">
+  <div class="container">
+    <h2 class="section-title text-center">My Project</h2>
+    <p class="project-subtitle text-center">
+      i will update if i have a new project xixixi or you can stay tune in my
+      instagram @debug.stack
+    </p>
+    
+    <div class="row g-4">
+      <!-- Project 1: OMITS 17th -->
+      <div class="col-md-4">
+        <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal1">
+          <img src="./src/thumb-porto/omits17th.png" alt="omits 17th" class="project-img">
+          <div class="project-overlay">
+            <h3>web omits</h3>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2: CTF -->
+      <div class="col-md-4">
+        <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal2">
+          <img src="./src/thumb-porto/pico-ctf.png" alt="CTF Write-up" class="project-img">
+          <div class="project-overlay">
+            <h3>Capture the flag (CTF) Written-Up</h3>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3: Arduino -->
+      <div class="col-md-4">
+        <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal3">
+          <img src="./src/thumb-porto/arduino obstacle robot.jpg" alt="Arduino Project" class="project-img">
+          <div class="project-overlay">
+            <h3>Arduino Project</h3>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 4: My Photo -->
+      <div class="col-md-4">
+        <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal4">
+          <img src="./src/thumb-porto/my-photo.JPG" alt="My Photo" class="project-img">
+          <div class="project-overlay">
+            <h3>my result photo every moment</h3>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 5: My Video -->
+      <div class="col-md-4">
+        <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal5">
+          <img src="./src/thumb-porto/my-video.png" alt="My Video" class="project-img">
+          <div class="project-overlay">
+            <h3>my video</h3>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 6: Gitbook -->
+      <div class="col-md-4">
+        <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal6">
+          <img src="./src/thumb-porto/my-gitbook.png" alt="Gitbook" class="project-img">
+          <div class="project-overlay">
+            <h3>My gitbook</h3>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 7: Predict SPP -->
+      <div class="col-md-4">
+        <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal7">
+          <img src="./src/thumb-porto/predict-spp.png" alt="Predict SPP" class="project-img">
+          <div class="project-overlay">
+            <h3>Predict SPP<br> (project Internship)</h3>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 8: UI/UX MTO -->
+      <div class="col-md-4">
+        <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal8">
+          <img src="./src/thumb-porto/uiux-mtq.png" alt="UI/UX Design" class="project-img">
+          <div class="project-overlay">
+            <h3>design UI/UX for MTO</h3>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 9: Math Model -->
+      <div class="col-md-4">
+        <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal9">
+          <img src="./src/thumb-porto/pemod.png" alt="Math Model" class="project-img">
+          <div class="project-overlay">
+            <h3>project Mathematic model</h3>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 10: OpenCV -->
+      <div class="col-md-4">
+        <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal10">
+          <img src="./src/thumb-porto/opencv.png" alt="OpenCV Project" class="project-img">
+          <div class="project-overlay">
+            <h3>OpenCV Project</h3>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 11: Math System -->
+      <div class="col-md-4">
+        <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal11">
+          <img src="./src/thumb-porto/matsis.png" alt="Math System" class="project-img">
+          <div class="project-overlay">
+            <h3>project Mathematic System</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Modals for each project -->
+<!-- Modal 1: OMITS 17th -->
+<div class="modal fade" id="projectModal1" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Web OMITS 17th</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <img src="./src/thumb-porto/omits17th.png" alt="omits 17th" class="img-fluid mb-3">
+        <h1 style="font-style: italic;"><u>What i learn?</u></h1>
+        <p>Website for OMITS (Olimpiade Matematika ITS) 17th edition. A platform for mathematics competition at Institut Teknologi Sepuluh Nopember.</p>
+        <p><strong>Technologies:</strong> Laravel, Burp Suite</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-github-disabled" disabled>
+          <i class="bi bi-github"></i> 🔐 RESTRICTED
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 2: CTF -->
+<div class="modal fade" id="projectModal2" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Capture The Flag (CTF) Write-ups</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <img src="./src/thumb-porto/pico-ctf.png" alt="CTF" class="img-fluid mb-3">
+        <h1 style="font-style: italic;"><u>What i learn?</u></h1>
+        <p>Collection of my CTF challenge write-ups and solutions from various cybersecurity competitions.</p>
+        <p><strong>Topics:</strong> Web Security, Cryptography, Reverse Engineering, Forensics</p>
+      </div>
+      <div class="modal-footer">
+        <a href="https://github.com/fnvrxx/Journey-CTF" target="_blank" class="btn-github-link">
+          <i class="bi bi-github"></i> View on GitHub
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 3: Arduino -->
+<div class="modal fade" id="projectModal3" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Arduino Projects</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <img src="./src/thumb-porto/arduino obstacle robot.jpg" alt="Arduino" class="img-fluid mb-3">
+        <h1 style="font-style: italic;"><u>What i learn?</u></h1>
+        <p>Inspirated by <a href ="https://www.youtube.com/@DIYBuilder" target="_blank"> DIYBuilder</a> Youtube Various Arduino-based projects including IoT devices, sensors, and automation systems.</p>
+        <p><strong>Technologies:</strong> Arduino, C++, Sensors, IoT</p>
+      </div>
+      <div class="modal-footer">
+        <a href="https://drive.google.com/drive/folders/1pVzVetnkJCp3qx5WzX8gX8IQJy_6R5gk?usp=sharing" target="_blank" class="btn-github-link">
+          <i class="bi bi-github"></i> View on Google Drive
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 4: My Photo -->
+<div class="modal fade" id="projectModal4" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Photography Portfolio</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <img src="./src/thumb-porto/my-photo.JPG" alt="Photo" class="img-fluid mb-3">
+        <h1 style="font-style: italic;"><u>What i learn?</u></h1>
+        <p style="font-size:10px">(This is my hobby)</p>
+        <p>Collection of my photography work and visual projects.</p>
+        <p><strong>Focus:</strong> Landscape, Portrait, Street Photography</p>
+      </div>
+      <div class="modal-footer">
+        <a href="https://drive.google.com/drive/folders/1nLvUvfbrutrohWsrhmKdx8cF3SKeAgfE?usp=sharing" target="_blank" class="btn-github-link">
+          <i class="bi bi-github"></i> View Portfolio
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 5: My Video -->
+<div class="modal fade" id="projectModal5" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Video Projects</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <img src="./src/thumb-porto/my-video.png" alt="Video" class="img-fluid mb-3">
+        <h1 style="font-style: italic;"><u>What i learn?</u></h1>
+        <p style="font-size:10px">(This is my hobby)</p>
+        <p>Video editing and production projects, including tutorials and creative content.</p>
+        <p><strong>Skills:</strong> Video Editing, Motion Graphics, Storytelling</p>
+      </div>
+      <div class="modal-footer">
+        <a href="https://www.youtube.com/@fnvrxx2487" target="_blank" class="btn-github-link">
+          <i class="bi bi-github"></i> View Projects
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 6: Gitbook -->
+<div class="modal fade" id="projectModal6" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">My Gitbook</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <img src="./src/thumb-porto/gitbook-extension.png" alt="Gitbook" class="img-fluid mb-3">
+        <p>Documentation of my journey solving 100 LeetCode challenges. Recently completed the InstCode 100 challenge!</p>
+        <p><strong>Topics:</strong> Data Structures, Algorithms, Problem Solving</p>
+      </div>
+      <div class="modal-footer">
+        <a href="https://kamus-ku.gitbook.io/catatan-ngoding-pbo/" target="_blank" class="btn-github-link">
+          <i class="bi bi-github"></i> View on Gitbook
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 7: Predict SPP -->
+<div class="modal fade" id="projectModal7" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Predict SPP for Internship</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <img src="./src/thumb-porto/predict-spp.png" alt="SPP" class="img-fluid mb-3">
+        <p>Machine learning model to predict student performance (SPP) for internship placement.</p>
+        <p><strong>Technologies:</strong> Python, Scikit-learn, Pandas, Machine Learning</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-github-disabled" disabled>
+          <i class="bi bi-github"></i> 🔐 RESTRICTED
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 8: UI/UX MTO -->
+<div class="modal fade" id="projectModal8" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">UI/UX Design for MTQ</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <img src="./src/thumb-porto/uiux-mtq.png" alt="UI/UX" class="img-fluid mb-3">
+        <p>User interface and user experience design project for MTO (Mathematics Olympiad) platform.</p>
+        <p><strong>Tools:</strong> Figma, Adobe XD, User Research, Prototyping</p>
+      </div>
+      <div class="modal-footer">
+        <a href="https://www.figma.com/proto/p46SyrVZZ0x9JAEihOtFOd/MTQ-ITS-2024--DAQ-?page-id=0%3A1&node-id=101-11&viewport=804%2C385%2C0.49&t=NuNLgWscDYvwogmF-1&scaling=scale-down&content-scaling=fixed" target="_blank" class="btn-github-link">
+          <i class="bi bi-github"></i> View Design
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 9: Math Model -->
+<div class="modal fade" id="projectModal9" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Mathematical Modeling Project</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <img src="./src/thumb-porto/pemod.png" alt="Math Model" class="img-fluid mb-3">
+        <p>Mathematical modeling and simulation projects for solving real-world problems.</p>
+        <p><strong>Topics:</strong> Differential Equations, Optimization, Numerical Methods</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-github-disabled" disabled>
+          <i class="bi bi-github"></i> 🔐 RESTRICTED
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 10: OpenCV -->
+<div class="modal fade" id="projectModal10" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">OpenCV Projects</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <img src="./src/thumb-porto/opencv.png" alt="OpenCV" class="img-fluid mb-3">
+        <p>Computer vision projects using OpenCV library for image processing and object detection.</p>
+        <p><strong>Technologies:</strong> Python, OpenCV, Computer Vision, Image Processing</p>
+      </div>
+      <div class="modal-footer">
+            <button type="button" class="btn btn-github-disabled" disabled>
+          <i class="bi bi-github"></i> 🔐 RESTRICTED
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 11: Math System -->
+<div class="modal fade" id="projectModal11" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Mathematical System Project</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <img src="./src/thumb-porto/adding-matsis.png" alt="Math System" class="img-fluid mb-3">
+        <p>Development of mathematical computation systems and tools for academic purposes.</p>
+        <p><strong>Technologies:</strong> Python, NumPy, SymPy, Mathematical Computing</p>
+      </div>
+      <div class="modal-footer">
+        <a href="https://www.canva.com/design/DAGXj2AE-b4/L80gwCFOzRA5T-z5auiySg/edit?utm_content=DAGXj2AE-b4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" class="btn-github-link">
+          <i class="bi bi-github"></i> View on Presentation
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <!-- Footer Section -->
+    <section id="footer">
+      <div class="container text-center">
+        <h2 class="footer-title">Thanks You for visiting my Website!</h2>
+        <p class="footer-text">
+          interesting with me and want to collab with me?<br />
+          Contact me via gmail: fajardiosa10@gmail.com<br />
+          or you can DM me ;)
+        </p>
+        <p class="footer-text">Hope you enjoyment!</p>
+        <p class="footer-text">© 2024 Fajar Adie Santosa v0.0.1 (still need update)</p>
+      </div>
+    </section>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>
