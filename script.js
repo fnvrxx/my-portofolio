@@ -6,90 +6,77 @@ document.addEventListener("DOMContentLoaded", function () {
   ];
 
   const typedTextElement = document.getElementById("typed-text");
-  const cursorElement = document.querySelector(".cursor");
-
-  let lineIndex = 0;
-  let charIndex = 0;
+  const lineIndex = { current: 0 };
+  const charIndex = { current: 0 };
   let isDeleting = false;
-  let typingSpeed = 80;
-  let deletingSpeed = 50;
-  let pauseEnd = 2000;
-  let pauseStart = 500;
+
+  const TYPING_SPEED = 80;
+  const DELETING_SPEED = 50;
+  const PAUSE_END = 2000;
+  const PAUSE_START = 500;
 
   function type() {
-    const currentLine = textArray[lineIndex];
+    const currentLine = textArray[lineIndex.current];
 
     if (!isDeleting) {
-      // Typing
       typedTextElement.innerHTML =
         textArray
-          .slice(0, lineIndex)
+          .slice(0, lineIndex.current)
           .map((line) => `<i>${line}</i>`)
           .join("<br>") +
-        (lineIndex < textArray.length
-          ? `<br><i>${currentLine.substring(0, charIndex)}</i>`
+        (lineIndex.current < textArray.length
+          ? `<br><i>${currentLine.substring(0, charIndex.current)}</i>`
           : "");
 
-      charIndex++;
+      charIndex.current++;
 
-      if (charIndex > currentLine.length) {
-        // Finished typing current line
-        lineIndex++;
-        charIndex = 0;
+      if (charIndex.current > currentLine.length) {
+        lineIndex.current++;
+        charIndex.current = 0;
 
-        if (lineIndex < textArray.length) {
-          // Move to next line
-          setTimeout(type, pauseStart);
+        if (lineIndex.current < textArray.length) {
+          setTimeout(type, PAUSE_START);
         } else {
-          // Finished all lines, pause then restart
           setTimeout(() => {
             isDeleting = true;
-            lineIndex = textArray.length - 1;
-            charIndex = currentLine.length;
+            lineIndex.current = textArray.length - 1;
+            charIndex.current = textArray[lineIndex.current].length;
             type();
-          }, pauseEnd);
+          }, PAUSE_END);
         }
         return;
       }
     } else {
-      // Deleting
-      if (lineIndex >= 0) {
-        const currentLineForDelete = textArray[lineIndex];
+      const currentLineForDelete = textArray[lineIndex.current];
 
-        typedTextElement.innerHTML =
-          textArray
-            .slice(0, lineIndex)
-            .map((line) => `<i>${line}</i>`)
-            .join("<br>") +
-          (charIndex > 0
-            ? `<br><i>${currentLineForDelete.substring(0, charIndex)}</i>`
-            : "");
+      typedTextElement.innerHTML =
+        textArray
+          .slice(0, lineIndex.current)
+          .map((line) => `<i>${line}</i>`)
+          .join("<br>") +
+        (charIndex.current > 0
+          ? `<br><i>${currentLineForDelete.substring(0, charIndex.current)}</i>`
+          : "");
 
-        charIndex--;
+      charIndex.current--;
 
-        if (charIndex < 0) {
-          // Finished deleting current line
-          lineIndex--;
+      if (charIndex.current < 0) {
+        lineIndex.current--;
 
-          if (lineIndex >= 0) {
-            // Move to previous line
-            charIndex = textArray[lineIndex].length;
-          } else {
-            // Finished deleting all lines, restart typing
-            isDeleting = false;
-            lineIndex = 0;
-            charIndex = 0;
-            setTimeout(type, pauseStart);
-            return;
-          }
+        if (lineIndex.current >= 0) {
+          charIndex.current = textArray[lineIndex.current].length;
+        } else {
+          isDeleting = false;
+          lineIndex.current = 0;
+          charIndex.current = 0;
+          setTimeout(type, PAUSE_START);
+          return;
         }
       }
     }
 
-    const speed = isDeleting ? deletingSpeed : typingSpeed;
-    setTimeout(type, speed);
+    setTimeout(type, isDeleting ? DELETING_SPEED : TYPING_SPEED);
   }
 
-  // Start typing effect
-  setTimeout(type, pauseStart);
+  setTimeout(type, PAUSE_START);
 });
