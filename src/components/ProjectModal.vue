@@ -1,5 +1,5 @@
 <script setup>
-import { X } from "lucide-vue-next";
+import { Award, ExternalLink, FileText, X } from "lucide-vue-next";
 defineProps({
   project: { type: Object, default: null },
   toolIcons: { type: Object, required: true },
@@ -26,8 +26,38 @@ const emit = defineEmits(["close"]);
         <p class="eyebrow">{{ project.type }} / {{ project.year }}</p>
         <h2>{{ project.title }}</h2>
         <p>{{ project.description }}</p>
+        <a
+          v-if="project.document"
+          class="project-link"
+          :href="project.document"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FileText :size="16" />
+          {{ project.documentLabel || "View full analysis" }}
+        </a>
+        <a
+          v-if="project.certificate"
+          class="project-link"
+          :href="project.certificate"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Award :size="16" />
+          View certificate
+        </a>
+        <a
+          v-if="project.url"
+          class="project-link"
+          :href="project.url"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <ExternalLink :size="16" />
+          {{ project.urlLabel || "Visit live project" }}
+        </a>
         <div class="modal-tools">
-          <p>Tools used</p>
+          <p>Skills & tools</p>
           <div class="tool-list">
             <span v-for="tool in project.tools" :key="tool"
               ><img
@@ -46,5 +76,27 @@ const emit = defineEmits(["close"]);
 <style scoped>
 .modal-backdrop {
   z-index: 30;
+}
+
+.project-modal {
+  max-height: calc(100vh - 44px);
+  overflow-y: auto;
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+  padding-bottom: 4px;
+  color: #1e4238;
+  border-bottom: 1px solid #1e4238;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.project-link:hover {
+  color: #2e7262;
+  border-color: #2e7262;
 }
 </style>
