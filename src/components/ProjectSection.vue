@@ -9,7 +9,7 @@ const emit = defineEmits(["select"]);
 
 <template>
   <section id="work" class="page-section work-section">
-    <div class="section-label"><span>02</span><span>Selected work</span></div>
+    <div class="section-label"><span>03</span><span>Selected work</span></div>
     <div class="work-intro">
       <h2>A record of things made and questions explored.</h2>
       <p>Projects organized by the kind of problem they are built to solve.</p>

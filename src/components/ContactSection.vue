@@ -4,7 +4,7 @@ import { ArrowUpRight } from "lucide-vue-next";
 
 <template>
   <section id="contact" class="page-section contact-section">
-    <div class="section-label"><span>03</span><span>Contact</span></div>
+    <div class="section-label"><span>04</span><span>Contact</span></div>
     <div class="contact-inner">
       <h2>Have an idea worth<br /><em>working through?</em></h2>
       <a class="email-link" href="mailto:fajaradiesantosa@gmail.com"

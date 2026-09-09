@@ -1,10 +1,27 @@
 <script setup>
+import { onBeforeUnmount, onMounted, watch } from "vue";
 import { Award, ExternalLink, FileText, X } from "lucide-vue-next";
-defineProps({
+
+const props = defineProps({
   project: { type: Object, default: null },
   toolIcons: { type: Object, required: true },
 });
 const emit = defineEmits(["close"]);
+
+const handleKeydown = (event) => {
+  if (event.key === "Escape" && props.project) emit("close");
+};
+
+watch(
+  () => props.project,
+  (project) => document.body.classList.toggle("modal-open", Boolean(project)),
+);
+
+onMounted(() => window.addEventListener("keydown", handleKeydown));
+onBeforeUnmount(() => {
+  window.removeEventListener("keydown", handleKeydown);
+  document.body.classList.remove("modal-open");
+});
 </script>
 
 <template>
@@ -75,7 +92,7 @@ const emit = defineEmits(["close"]);
 
 <style scoped>
 .modal-backdrop {
-  z-index: 30;
+  z-index: 50;
 }
 
 .project-modal {

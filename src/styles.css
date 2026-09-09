@@ -16,6 +16,10 @@ body {
   min-width: 320px;
   background: #fbfbf8;
 }
+body.menu-open,
+body.modal-open {
+  overflow: hidden;
+}
 button,
 a {
   font: inherit;
@@ -75,9 +79,13 @@ a {
     background 0.2s,
     color 0.2s;
 }
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a.router-link-exact-active {
   color: #1e4238;
   background: #e7ece3;
+}
+.nav-links a.router-link-exact-active span {
+  color: #2e7262;
 }
 .nav-links span,
 .section-label,
@@ -124,6 +132,7 @@ footer {
   border-color: #1e4238;
 }
 .main-content {
+  min-height: 100vh;
   margin-left: 272px;
 }
 .page-section {
@@ -194,6 +203,7 @@ em {
   white-space: nowrap;
 }
 .about-section {
+  min-height: 100vh;
   border-top: 1px solid #dce2da;
 }
 .section-label {
@@ -259,6 +269,7 @@ em {
   color: #283a33;
 }
 .work-section {
+  min-height: 100vh;
   border-top: 1px solid #dce2da;
 }
 .work-intro {
@@ -338,6 +349,7 @@ em {
   color: #2e7262;
 }
 .contact-section {
+  min-height: 100vh;
   padding-bottom: 35px;
   border-top: 1px solid #dce2da;
 }
@@ -362,9 +374,12 @@ footer {
 .mobile-header {
   display: none;
 }
+.mobile-nav-backdrop {
+  display: none;
+}
 .modal-backdrop {
   position: fixed;
-  z-index: 30;
+  z-index: 50;
   inset: 0;
   display: grid;
   place-items: center;
@@ -426,8 +441,19 @@ footer {
   }
   .sidebar.is-open {
     display: flex;
+    top: 65px;
+    bottom: 0;
+    height: auto;
+    z-index: 30;
     width: min(290px, 86vw);
+    padding-top: 28px;
     box-shadow: 14px 0 50px rgba(16, 36, 28, 0.17);
+  }
+  .sidebar.is-open > .brand {
+    display: none;
+  }
+  .sidebar.is-open .nav-links {
+    margin-top: 0;
   }
   .main-content {
     margin-left: 0;
@@ -436,22 +462,53 @@ footer {
     display: flex;
     position: sticky;
     top: 0;
-    z-index: 20;
+    z-index: 40;
+    min-height: 65px;
     align-items: center;
     justify-content: space-between;
-    padding: 17px 20px;
+    padding: 10px 16px 10px 20px;
     background: rgba(251, 251, 248, 0.92);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid #e1e6df;
   }
-  .mobile-header .icon-button {
-    z-index: 21;
+  .mobile-header .brand {
+    min-width: 0;
+  }
+  .mobile-header .brand > span:last-child {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .mobile-header .mobile-menu-button {
+    flex: 0 0 44px;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    line-height: 0;
+  }
+  .mobile-header .mobile-menu-button svg {
+    display: block;
+  }
+  .mobile-nav-backdrop {
+    display: block;
+    position: fixed;
+    inset: 65px 0 0;
+    z-index: 25;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    background: rgba(21, 36, 30, 0.32);
   }
   .page-section {
     padding: 74px 24px;
   }
   .hero {
-    min-height: calc(100vh - 61px);
+    min-height: calc(100vh - 65px);
+  }
+  .about-section,
+  .work-section,
+  .contact-section {
+    min-height: calc(100vh - 65px);
   }
   .hero h1 {
     font-size: clamp(48px, 14vw, 70px);

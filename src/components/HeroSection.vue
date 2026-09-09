@@ -1,5 +1,6 @@
 <script setup>
 import { ArrowUpRight, Code2, Github, Linkedin, Mail } from "lucide-vue-next";
+import { RouterLink } from "vue-router";
 </script>
 
 <template>
@@ -24,15 +25,17 @@ import { ArrowUpRight, Code2, Github, Linkedin, Mail } from "lucide-vue-next";
         ><Mail :size="18"
       /></a>
     </div>
-    <h1>Exploring ideas through <em>logic</em> and design.</h1>
+    <h1>Turning mathematical thinking into practical <em>digital work.</em></h1>
     <div class="hero-footer">
       <p>
-        A mathematics student and curious builder who enjoys turning complex
-        questions into thoughtful digital work.
+        I'm Fajar Adie Santosa, a mathematics student from Yogyakarta working
+        across data analysis, full-stack development, and computer vision. I
+        use logic, code, and curiosity to explore complex problems and build
+        clear, useful solutions.
       </p>
-      <a class="text-link" href="#work"
-        >View selected work <ArrowUpRight :size="16"
-      /></a>
+      <RouterLink class="text-link" to="/work">
+        Explore selected work <ArrowUpRight :size="16" />
+      </RouterLink>
     </div>
   </section>
 </template>
