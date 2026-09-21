@@ -1,5 +1,5 @@
 <script setup>
-import { onBeforeUnmount, onMounted, watch } from "vue";
+import { nextTick, onBeforeUnmount, onMounted, ref, watch } from "vue";
 import { Award, ExternalLink, FileText, X } from "lucide-vue-next";
 
 const props = defineProps({
@@ -7,14 +7,49 @@ const props = defineProps({
   toolIcons: { type: Object, required: true },
 });
 const emit = defineEmits(["close"]);
+const modal = ref(null);
+const closeButton = ref(null);
+let previouslyFocused = null;
 
 const handleKeydown = (event) => {
-  if (event.key === "Escape" && props.project) emit("close");
+  if (!props.project) return;
+
+  if (event.key === "Escape") {
+    emit("close");
+    return;
+  }
+
+  if (event.key !== "Tab" || !modal.value) return;
+
+  const focusable = modal.value.querySelectorAll(
+    'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
+  );
+  const first = focusable[0];
+  const last = focusable[focusable.length - 1];
+
+  if (event.shiftKey && document.activeElement === first) {
+    event.preventDefault();
+    last?.focus();
+  } else if (!event.shiftKey && document.activeElement === last) {
+    event.preventDefault();
+    first?.focus();
+  }
 };
 
 watch(
   () => props.project,
-  (project) => document.body.classList.toggle("modal-open", Boolean(project)),
+  async (project) => {
+    document.body.classList.toggle("modal-open", Boolean(project));
+
+    if (project) {
+      previouslyFocused = document.activeElement;
+      await nextTick();
+      closeButton.value?.focus();
+    } else {
+      previouslyFocused?.focus();
+      previouslyFocused = null;
+    }
+  },
 );
 
 onMounted(() => window.addEventListener("keydown", handleKeydown));
@@ -28,12 +63,14 @@ onBeforeUnmount(() => {
   <Transition name="fade"
     ><div v-if="project" class="modal-backdrop" @click.self="emit('close')">
       <article
+        ref="modal"
         class="project-modal"
         role="dialog"
         aria-modal="true"
         :aria-label="project.title"
       >
         <button
+          ref="closeButton"
           class="modal-close"
           aria-label="Close project details"
           @click="emit('close')"
@@ -106,14 +143,14 @@ onBeforeUnmount(() => {
   gap: 8px;
   margin-top: 4px;
   padding-bottom: 4px;
-  color: #1e4238;
-  border-bottom: 1px solid #1e4238;
+  min-height: 44px;
+  color: var(--ink);
+  border-bottom: 1px solid var(--ink);
   font-size: 14px;
   font-weight: 500;
 }
 
 .project-link:hover {
-  color: #2e7262;
-  border-color: #2e7262;
+  background: var(--soft);
 }
 </style>

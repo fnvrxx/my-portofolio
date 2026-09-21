@@ -33,16 +33,16 @@ export const toolIcons = {
 };
 
 const asset = (name) => new URL(`../thumb-porto/${name}`, import.meta.url).href;
-const documentAsset = (name) =>
-  new URL(`../doc/${name}`, import.meta.url).href;
+const documentAsset = (name) => new URL(`../doc/${name}`, import.meta.url).href;
 const competitionAsset = (name) =>
   new URL(`../competition/${name}`, import.meta.url).href;
 
 export const projectSections = [
   {
+    id: "data-analyst",
     title: "Data Analyst",
     description:
-      "Turning data into clear business insights, practical decisions, and measurable opportunities.",
+      "Case studies built from collected data, statistical methods, and documented findings.",
     projects: [
       {
         title: "Surabaya Kos Market Analysis",
@@ -96,9 +96,31 @@ export const projectSections = [
       },
     ],
   },
+
   {
-    title: "Full Stack Developer",
-    description: "Digital products, web systems, and interfaces.",
+    id: "computer-vision",
+    title: "Computer Vision",
+    description:
+      "Experiments in image processing, recognition, and object detection.",
+    projects: [
+      {
+        title: "OpenCV Projects",
+        type: "Computer vision",
+        year: "2024",
+        image: asset("opencv.png"),
+        description:
+          "Computer vision projects using OpenCV for image processing and object detection.",
+        tools: ["Python", "OpenCV", "Computer Vision"],
+        url: "https://github.com/fnvrxx/Face-recognition-expression",
+        urlLabel: "View GitHub repository",
+      },
+    ],
+  },
+  {
+    id: "nothing",
+    title: "For Fun",
+    description:
+      "Web products and interface prototypes built for specific uses.",
     projects: [
       {
         title: "OMITS 17th Website",
@@ -110,7 +132,7 @@ export const projectSections = [
         tools: ["Laravel"],
       },
       {
-        title: "Khabbab — Personalized Quranic Learning",
+        title: "Khabbab: Personalized Quranic Learning",
         type: "1st Honorable Mention · MTQ ITS",
         year: "2024",
         image: asset("uiux-mtq.png"),
@@ -133,23 +155,6 @@ export const projectSections = [
         tools: ["Figma", "Prototyping"],
         url: "https://www.figma.com/proto/m21wkVJ8Lr9ZyB9lz7Xz7B/PKM?node-id=434-2&p=f&viewport=-2127%2C1301%2C0.25&t=sUvFDDiyvXabCXNB-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=434%3A2&page-id=57%3A2",
         urlLabel: "View Figma prototype",
-      },
-    ],
-  },
-  {
-    title: "Computer Vision",
-    description: "Image processing and object detection exploration.",
-    projects: [
-      {
-        title: "OpenCV Projects",
-        type: "Computer vision",
-        year: "2024",
-        image: asset("opencv.png"),
-        description:
-          "Computer vision projects using OpenCV for image processing and object detection.",
-        tools: ["Python", "OpenCV", "Computer Vision"],
-        url: "https://github.com/fnvrxx/Face-recognition-expression",
-        urlLabel: "View GitHub repository",
       },
     ],
   },
