@@ -17,9 +17,18 @@
           something people can inspect, use, or discuss together.
         </p>
         <dl class="facts">
-          <div><dt>Focus</dt><dd>Algorithms & programming</dd></div>
-          <div><dt>Study</dt><dd>Mathematics</dd></div>
-          <div><dt>Approach</dt><dd>Curious, collaborative, precise</dd></div>
+          <div>
+            <dt>Focus</dt>
+            <dd>Algorithms & programming</dd>
+          </div>
+          <div>
+            <dt>Study</dt>
+            <dd>(Bachelor of) Mathematics field Computer Science</dd>
+          </div>
+          <div>
+            <dt>Approach</dt>
+            <dd>Curious, collaborative, precise</dd>
+          </div>
         </dl>
       </div>
     </div>
