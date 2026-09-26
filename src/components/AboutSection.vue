@@ -1,6 +1,5 @@
 <template>
   <section id="about" class="page-section about-section">
-    <div class="section-label"><span>02</span><span>About</span></div>
     <div class="about-grid">
       <div class="portrait-wrap">
         <img src="../icon/my-face.png" alt="Portrait of Fajar Adie Santosa" />

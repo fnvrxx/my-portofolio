@@ -10,8 +10,8 @@ const route = useRoute();
 const workMenuOpen = ref(route.path.startsWith("/work"));
 
 const primaryNavigation = [
-  { number: "01", label: "Introduction", to: "/" },
-  { number: "02", label: "About", to: "/about" },
+  { label: "Introduction", to: "/" },
+  { label: "About", to: "/about" },
 ];
 
 const workNavigation = [
@@ -50,7 +50,7 @@ watch(
         :to="item.to"
         @click="emit('navigate')"
       >
-        <span>{{ item.number }}</span>{{ item.label }}
+        {{ item.label }}
       </RouterLink>
       <div
         class="nav-dropdown"
@@ -63,7 +63,6 @@ watch(
           :aria-expanded="workMenuOpen"
           @click="workMenuOpen = !workMenuOpen"
         >
-          <span>03</span>
           <strong>Selected work</strong>
           <ChevronDown class="nav-dropdown-chevron" :size="17" />
         </button>
@@ -79,8 +78,10 @@ watch(
           </RouterLink>
         </div>
       </div>
+      <RouterLink to="/gitbook" @click="emit('navigate')">Gitbook</RouterLink>
+      <RouterLink to="/medium" @click="emit('navigate')">Medium</RouterLink>
       <RouterLink to="/contact" @click="emit('navigate')">
-        <span>04</span>Contact
+        Contact
       </RouterLink>
     </nav>
   </aside>

@@ -4,6 +4,7 @@ import ContactSection from "./components/ContactSection.vue";
 import HeroSection from "./components/HeroSection.vue";
 import RoleWorkPage from "./views/RoleWorkPage.vue";
 import WorkPage from "./views/WorkPage.vue";
+import WritingPage from "./views/WritingPage.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -11,6 +12,18 @@ const router = createRouter({
     { path: "/", name: "introduction", component: HeroSection },
     { path: "/about", name: "about", component: AboutSection },
     { path: "/work", name: "work", component: WorkPage },
+    {
+      path: "/gitbook",
+      name: "gitbook",
+      component: WritingPage,
+      props: { collection: "gitbook" },
+    },
+    {
+      path: "/medium",
+      name: "medium",
+      component: WritingPage,
+      props: { collection: "medium" },
+    },
     {
       path: "/work/data-analyst",
       name: "work-data-analyst",
