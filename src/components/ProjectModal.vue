@@ -7,6 +7,8 @@ const props = defineProps({
   toolIcons: { type: Object, required: true },
 });
 const emit = defineEmits(["close"]);
+const visibleTools = () =>
+  (props.project?.tools || []).filter((tool) => Boolean(props.toolIcons[tool]));
 const modal = ref(null);
 const closeButton = ref(null);
 let previouslyFocused = null;
@@ -80,46 +82,49 @@ onBeforeUnmount(() => {
         <p class="eyebrow">{{ project.type }} / {{ project.year }}</p>
         <h2>{{ project.title }}</h2>
         <p>{{ project.description }}</p>
-        <a
-          v-if="project.document"
-          class="project-link"
-          :href="project.document"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FileText :size="16" />
-          {{ project.documentLabel || "View full analysis" }}
-        </a>
-        <a
-          v-if="project.certificate"
-          class="project-link"
-          :href="project.certificate"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Award :size="16" />
-          View certificate
-        </a>
-        <a
-          v-if="project.url"
-          class="project-link"
-          :href="project.url"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <ExternalLink :size="16" />
-          {{ project.urlLabel || "Visit live project" }}
-        </a>
-        <div class="modal-tools">
-          <p>Skills & tools</p>
+        <div v-if="project.document || project.certificate || project.url" class="project-links">
+          <a
+            v-if="project.document"
+            class="project-link"
+            :href="project.document"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FileText :size="18" />
+            {{ project.documentLabel || "View full analysis" }}
+          </a>
+          <a
+            v-if="project.certificate"
+            class="project-link"
+            :href="project.certificate"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Award :size="18" />
+            View certificate
+          </a>
+          <a
+            v-if="project.url"
+            class="project-link"
+            :href="project.url"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <ExternalLink :size="18" />
+            {{ project.urlLabel || "Visit live project" }}
+          </a>
+        </div>
+        <div v-if="visibleTools().length" class="modal-tools" aria-label="Tools used">
+          <p class="modal-tools-heading">Tools what i used</p>
           <div class="tool-list">
-            <span v-for="tool in project.tools" :key="tool"
-              ><img
-                v-if="typeof toolIcons[tool] === 'string'"
-                :src="toolIcons[tool]"
-                alt=""
-              /><component v-else :is="toolIcons[tool]" :size="14" />{{ tool }}</span
-            >
+            <img
+              v-for="tool in visibleTools()"
+              :key="tool"
+              :src="toolIcons[tool]"
+              :alt="tool"
+              width="38"
+              height="38"
+            />
           </div>
         </div>
       </article>
@@ -137,20 +142,39 @@ onBeforeUnmount(() => {
   overflow-y: auto;
 }
 
-.project-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 4px;
-  padding-bottom: 4px;
-  min-height: 44px;
-  color: var(--ink);
-  border-bottom: 1px solid var(--ink);
-  font-size: 14px;
-  font-weight: 500;
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 27px;
 }
 
-.project-link:hover {
+.project-link {
+  display: inline-flex;
+  min-height: 49px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 16px;
+  color: var(--ink);
   background: var(--soft);
+  border: 2px solid var(--ink);
+  box-shadow: 5px 5px 0 var(--ink);
+  font-family: "DM Sans", Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.2;
+  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+}
+
+.project-link:hover,
+.project-link:focus-visible {
+  transform: translate(3px, 3px);
+  background: var(--accent);
+  box-shadow: 2px 2px 0 var(--ink);
+}
+
+.project-link svg {
+  flex: 0 0 auto;
 }
 </style>

@@ -28,6 +28,7 @@ const projects = computed(() =>
     </RouterLink>
     <header v-if="section" class="role-work-header">
       <h1>{{ section.title }}</h1>
+      <p>{{ section.description }}</p>
     </header>
     <ProjectGrid
       :projects="projects"

@@ -1,5 +1,5 @@
 <script setup>
-defineProps({
+const props = defineProps({
   projects: { type: Array, required: true },
   toolIcons: { type: Object, required: true },
   loading: { type: Boolean, default: false },
@@ -7,6 +7,8 @@ defineProps({
 });
 
 const emit = defineEmits(["select"]);
+const visibleTools = (project) =>
+  project.tools.filter((tool) => Boolean(props.toolIcons[tool]));
 </script>
 
 <template>
@@ -20,7 +22,7 @@ const emit = defineEmits(["select"]);
   <p v-else-if="!projects.length" class="work-state">
     No projects are available for this role yet.
   </p>
-  <div v-else class="project-grid">
+  <div v-else v-reveal class="project-grid">
     <button
       v-for="project in projects"
       :key="project.title"
@@ -39,16 +41,15 @@ const emit = defineEmits(["select"]);
         <strong>{{ project.title }}</strong>
         <span>{{ project.type }}</span>
       </span>
-      <span class="tool-list">
-        <span v-for="tool in project.tools" :key="tool">
-          <img
-            v-if="typeof toolIcons[tool] === 'string'"
-            :src="toolIcons[tool]"
-            alt=""
-          />
-          <component v-else :is="toolIcons[tool]" :size="13" />
-          {{ tool }}
-        </span>
+      <span v-if="visibleTools(project).length" class="tool-list" aria-label="Tools used">
+        <img
+          v-for="tool in visibleTools(project)"
+          :key="tool"
+          :src="toolIcons[tool]"
+          :alt="tool"
+          width="34"
+          height="34"
+        />
       </span>
       <span class="project-card-action">View project details</span>
     </button>

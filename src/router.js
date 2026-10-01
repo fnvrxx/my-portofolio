@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
-import AboutSection from "./components/AboutSection.vue";
+import ExperienceSection from "./components/ExperienceSection.vue";
 import ContactSection from "./components/ContactSection.vue";
 import HeroSection from "./components/HeroSection.vue";
 import RoleWorkPage from "./views/RoleWorkPage.vue";
@@ -10,7 +10,8 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     { path: "/", name: "introduction", component: HeroSection },
-    { path: "/about", name: "about", component: AboutSection },
+    { path: "/experience", name: "experience", component: ExperienceSection },
+    { path: "/about", redirect: "/experience" },
     { path: "/work", name: "work", component: WorkPage },
     {
       path: "/gitbook",
@@ -31,11 +32,12 @@ const router = createRouter({
       props: { roleId: "data-analyst" },
     },
     {
-      path: "/work/nothing",
-      name: "work-nothing",
+      path: "/work/web-full-stack",
+      name: "work-web-full-stack",
       component: RoleWorkPage,
-      props: { roleId: "nothing" },
+      props: { roleId: "web-full-stack" },
     },
+    { path: "/work/nothing", redirect: "/work/web-full-stack" },
     {
       path: "/work/computer-vision",
       name: "work-computer-vision",

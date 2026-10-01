@@ -11,11 +11,10 @@ const workMenuOpen = ref(route.path.startsWith("/work"));
 
 const primaryNavigation = [
   { label: "Introduction", to: "/" },
-  { label: "About", to: "/about" },
+  { label: "Experience", to: "/experience" },
 ];
 
 const workNavigation = [
-  { label: "All projects", to: "/work" },
   {
     label: "Data Analyst",
     to: "/work/data-analyst",
@@ -25,8 +24,8 @@ const workNavigation = [
     to: "/work/computer-vision",
   },
   {
-    label: "For Fun",
-    to: "/work/nothing",
+    label: "Web Full Stack",
+    to: "/work/web-full-stack",
   },
 ];
 
@@ -56,16 +55,21 @@ watch(
         class="nav-dropdown"
         :class="{ 'is-active': route.path.startsWith('/work') }"
       >
-        <button
-          class="nav-dropdown-trigger"
-          type="button"
-          aria-controls="work-navigation"
-          :aria-expanded="workMenuOpen"
-          @click="workMenuOpen = !workMenuOpen"
-        >
-          <strong>Selected work</strong>
-          <ChevronDown class="nav-dropdown-chevron" :size="17" />
-        </button>
+        <div class="nav-dropdown-trigger">
+          <RouterLink class="nav-dropdown-link" to="/work/" @click="emit('navigate')">
+            Selected work
+          </RouterLink>
+          <button
+            class="nav-dropdown-toggle"
+            type="button"
+            aria-label="Toggle work categories"
+            aria-controls="work-navigation"
+            :aria-expanded="workMenuOpen"
+            @click="workMenuOpen = !workMenuOpen"
+          >
+            <ChevronDown class="nav-dropdown-chevron" :size="17" />
+          </button>
+        </div>
         <div v-show="workMenuOpen" id="work-navigation" class="nav-submenu">
           <RouterLink
             v-for="item in workNavigation"

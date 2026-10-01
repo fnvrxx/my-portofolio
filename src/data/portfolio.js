@@ -1,35 +1,14 @@
-import {
-  BarChart3,
-  Braces,
-  BrainCircuit,
-  Code2,
-  Database,
-  Eye,
-  Figma,
-  Image,
-  ScanLine,
-} from "lucide-vue-next";
-
 export const toolIcons = {
   Laravel: "/tool-icons/laravel.svg",
-  "Burp Suite": ScanLine,
-  Python: Code2,
-  "Scikit-learn": BrainCircuit,
-  Pandas: BarChart3,
-  Figma,
-  "User Research": Eye,
-  Prototyping: Figma,
-  NumPy: Database,
-  SymPy: Braces,
-  OpenCV: Image,
-  "Computer Vision": Eye,
-  "Data Visualization": BarChart3,
-  "Data Scraping": Database,
-  "Business Analysis": BarChart3,
-  "Predictive Modeling": BrainCircuit,
-  "Analytical Thinking": BrainCircuit,
-  "Mathematical Statistics": BarChart3,
-  "Simulation Techniques": Braces,
+  Python: "/tool-icons/python.svg",
+  "Scikit-learn": "/tool-icons/scikitlearn.svg",
+  Pandas: "/tool-icons/pandas.svg",
+  Figma: "/tool-icons/figma.svg",
+  NumPy: "/tool-icons/numpy.svg",
+  SymPy: "/tool-icons/sympy.svg",
+  OpenCV: "/tool-icons/opencv.svg",
+  React: "/tool-icons/react.svg",
+  "Next.js": "/tool-icons/nextjs.svg",
 };
 
 const asset = (name) => new URL(`../thumb-porto/${name}`, import.meta.url).href;
@@ -117,10 +96,10 @@ export const projectSections = [
     ],
   },
   {
-    id: "nothing",
-    title: "For Fun",
+    id: "web-full-stack",
+    title: "Web Full Stack",
     description:
-      "Web products and interface prototypes built for specific uses.",
+      "Web builds and interface prototypes made for specific uses.",
     projects: [
       {
         title: "OMITS 17th Website",
@@ -155,6 +134,17 @@ export const projectSections = [
         tools: ["Figma", "Prototyping"],
         url: "https://www.figma.com/proto/m21wkVJ8Lr9ZyB9lz7Xz7B/PKM?node-id=434-2&p=f&viewport=-2127%2C1301%2C0.25&t=sUvFDDiyvXabCXNB-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=434%3A2&page-id=57%3A2",
         urlLabel: "View Figma prototype",
+      },
+      {
+        title: "Pomodoro",
+        type: "Website",
+        year: "2026",
+        image: asset("pomodoro.png"),
+        description:
+          "A browser-based focus timer for study and work, with no account required.",
+        tools: ["React", "Next.js"],
+        url: "https://pomodoro.fajardios.my.id/",
+        urlLabel: "Link",
       },
     ],
   },

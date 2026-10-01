@@ -1,37 +1,33 @@
 <script setup>
-import { computed } from "vue";
-import ProjectGrid from "./ProjectGrid.vue";
+import { RouterLink } from "vue-router";
 
-const props = defineProps({
+defineProps({
   sections: { type: Array, required: true },
-  toolIcons: { type: Object, required: true },
-  loading: { type: Boolean, default: false },
-  error: { type: String, default: "" },
 });
-const emit = defineEmits(["select"]);
-
-const projects = computed(() =>
-  props.sections.flatMap((section) =>
-    section.projects.map((project) => ({
-      ...project,
-      role: section.title,
-    })),
-  ),
-);
 </script>
 
 <template>
   <section id="work" class="page-section work-section">
     <div class="work-intro">
-      <h2>Selected projects, organized by field.</h2>
-      <p>Use the sidebar to move between fields, or read the full archive.</p>
+      <h1>Selected work</h1>
+      <p>Choose a field to see the projects inside.</p>
     </div>
-    <ProjectGrid
-      :projects="projects"
-      :tool-icons="toolIcons"
-      :loading="loading"
-      :error="error"
-      @select="emit('select', $event)"
-    />
+    <p v-if="!sections.length" class="work-state">
+      No project categories are available yet.
+    </p>
+    <div v-else v-reveal class="folder-grid">
+      <RouterLink
+        v-for="section in sections"
+        :key="section.id"
+        class="folder-link"
+        :to="`/work/${section.id}`"
+      >
+        <span class="folder-art" aria-hidden="true">
+          <span class="folder-tab"></span>
+          <span class="folder-face"></span>
+        </span>
+        <span class="folder-name">{{ section.title }}</span>
+      </RouterLink>
+    </div>
   </section>
 </template>
