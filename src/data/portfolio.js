@@ -146,7 +146,7 @@ export const projectSections = [
         urlLabel: "Link",
       },
       {
-        title: "Pomodoro",
+        title: "Kos Management System",
         type: "Website",
         year: "2026",
         image: asset("mykos.png"),
