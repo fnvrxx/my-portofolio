@@ -98,8 +98,7 @@ export const projectSections = [
   {
     id: "web-full-stack",
     title: "Web Full Stack",
-    description:
-      "Web builds and interface prototypes made for specific uses.",
+    description: "Web builds and interface prototypes made for specific uses.",
     projects: [
       {
         title: "OMITS 17th Website",
@@ -144,6 +143,17 @@ export const projectSections = [
           "A browser-based focus timer for study and work, with no account required.",
         tools: ["React", "Next.js"],
         url: "https://pomodoro.fajardios.my.id/",
+        urlLabel: "Link",
+      },
+      {
+        title: "Pomodoro",
+        type: "Website",
+        year: "2026",
+        image: asset("mykos.png"),
+        description:
+          "A web application for managing boarding house (kos) operations across multiple locations. It provides features for managing tenants, rooms, payments, payment reminders, operational expenses, and transaction reports through a centralized admin panel.",
+        tools: ["Laravel"],
+        url: "https://m-kos.fajardios.my.id/",
         urlLabel: "Link",
       },
     ],
