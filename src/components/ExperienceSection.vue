@@ -7,7 +7,8 @@ const experiences = [
     role: "Software Developer",
     organization: "Nechcode",
     period: "Feb 2026–Present",
-    summary: "Building a company introduction website and a POS system for warehouse cashiers.",
+    summary:
+      "Building a company introduction website and a POS system for warehouse cashiers.",
     detail:
       "The work covers the company website and a cashier workflow for the warehouse.",
   },
@@ -45,9 +46,15 @@ const toggleExperience = (index) => {
 </script>
 
 <template>
-  <section id="experience" class="page-section experience-section" aria-labelledby="experience-title">
+  <section
+    id="experience"
+    class="page-section experience-section"
+    aria-labelledby="experience-title"
+  >
     <div v-reveal class="experience-main">
-      <h1 id="experience-title" class="experience-title-card">My Work Experience</h1>
+      <h1 id="experience-title" class="experience-title-card">
+        My Work Experience
+      </h1>
       <ol class="experience-timeline">
         <li v-for="(experience, index) in experiences" :key="experience.role">
           <button
@@ -58,11 +65,16 @@ const toggleExperience = (index) => {
             @click="toggleExperience(index)"
           >
             <span class="experience-entry-top">
-              <strong>{{ experience.role }} <span>· {{ experience.organization }}</span></strong>
+              <strong
+                >{{ experience.role }}
+                <span>· {{ experience.organization }}</span></strong
+              >
               <small>{{ experience.period }}</small>
             </span>
             <span class="experience-summary">{{ experience.summary }}</span>
-            <span class="experience-toggle" aria-hidden="true">{{ expandedIndex === index ? '−' : '+' }}</span>
+            <span class="experience-toggle" aria-hidden="true">{{
+              expandedIndex === index ? "−" : "+"
+            }}</span>
           </button>
           <Transition name="detail">
             <p
@@ -75,15 +87,23 @@ const toggleExperience = (index) => {
           </Transition>
         </li>
       </ol>
-      <a class="action-button experience-cv" href="/Fajar-Adie-Santosa-CV.pdf" target="_blank" rel="noopener noreferrer">
+      <a
+        class="action-button experience-cv"
+        href="/Fajar-Adie-Santosa-CV.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         View full CV
       </a>
     </div>
 
     <aside class="experience-contact">
       <div>
-        <p>Working on a web product?</p>
-        <h2>Tell me what it needs to do.</h2>
+        <p>Let's Build Something Intelligent Together.</p>
+        <h2>
+          Have an idea for AI or Computer Vision? Let's turn it into a working
+          solution.
+        </h2>
       </div>
       <RouterLink class="action-button" to="/contact">Get in touch</RouterLink>
     </aside>
