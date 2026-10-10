@@ -39,10 +39,10 @@ const router = createRouter({
     },
     { path: "/work/nothing", redirect: "/work/web-full-stack" },
     {
-      path: "/work/computer-vision",
-      name: "work-computer-vision",
+      path: "/work/ai-computer-vision",
+      name: "work-ai-computer-vision",
       component: RoleWorkPage,
-      props: { roleId: "computer-vision" },
+      props: { roleId: "ai-computer-vision-engineer" },
     },
     { path: "/contact", name: "contact", component: ContactSection },
     { path: "/:pathMatch(.*)*", redirect: "/" },

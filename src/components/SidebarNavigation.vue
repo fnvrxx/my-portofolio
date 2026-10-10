@@ -20,8 +20,8 @@ const workNavigation = [
     to: "/work/data-analyst",
   },
   {
-    label: "Computer Vision",
-    to: "/work/computer-vision",
+    label: "AI & Computer Vision",
+    to: "/work/ai-computer-vision",
   },
   {
     label: "Web Full Stack",
@@ -56,7 +56,11 @@ watch(
         :class="{ 'is-active': route.path.startsWith('/work') }"
       >
         <div class="nav-dropdown-trigger">
-          <RouterLink class="nav-dropdown-link" to="/work/" @click="emit('navigate')">
+          <RouterLink
+            class="nav-dropdown-link"
+            to="/work/"
+            @click="emit('navigate')"
+          >
             Selected work
           </RouterLink>
           <button
@@ -84,9 +88,7 @@ watch(
       </div>
       <RouterLink to="/gitbook" @click="emit('navigate')">Gitbook</RouterLink>
       <RouterLink to="/medium" @click="emit('navigate')">Medium</RouterLink>
-      <RouterLink to="/contact" @click="emit('navigate')">
-        Contact
-      </RouterLink>
+      <RouterLink to="/contact" @click="emit('navigate')"> Contact </RouterLink>
     </nav>
   </aside>
   <header class="mobile-header">

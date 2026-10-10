@@ -2,7 +2,21 @@
 import { ArrowUpRight } from "lucide-vue-next";
 import { toolIcons } from "../data/portfolio";
 
-const skills = ["Laravel", "Python", "React", "Next.js", "Pandas", "Figma", "OpenCV"];
+const skills = [
+  "Laravel",
+  "Python",
+  "React",
+  "Next.js",
+  "Pandas",
+  "Figma",
+  "OpenCV",
+  "paddleocr",
+  "postgresql",
+  "mysql",
+  "vite",
+  "selenium",
+  "matplotlib",
+];
 </script>
 
 <template>
@@ -18,9 +32,19 @@ const skills = ["Laravel", "Python", "React", "Next.js", "Pandas", "Figma", "Ope
       <div class="skills-strip-label">
         <strong>Skills</strong>
       </div>
-      <div class="skills-viewport" role="region" tabindex="0" aria-label="Skills">
+      <div
+        class="skills-viewport"
+        role="region"
+        tabindex="0"
+        aria-label="Skills"
+      >
         <div class="skills-track">
-          <ul v-for="copy in 2" :key="copy" class="skills-list" :aria-hidden="copy === 2 ? 'true' : undefined">
+          <ul
+            v-for="copy in 2"
+            :key="copy"
+            class="skills-list"
+            :aria-hidden="copy === 2 ? 'true' : undefined"
+          >
             <li v-for="skill in skills" :key="skill">
               <img :src="toolIcons[skill]" alt="" width="42" height="42" />
               <span>{{ skill }}</span>

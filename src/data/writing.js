@@ -3,11 +3,12 @@ const asset = (name) => new URL(`../thumb-porto/${name}`, import.meta.url).href;
 export const writingCollections = {
   gitbook: {
     title: "Gitbook",
-    description: "Notes from working through algorithm problems and their solutions.",
+    description:
+      "A collection of technical notes, tutorials, problem-solving guides, tools I use, and other technical writings covering software development, AI engineering, and computer vision.",
     entries: [
       {
         title: "Leetcode 100",
-        tags: ["Algorithms", "Problem solving"],
+        tags: ["Algorithms", "Problem solving", "Bahasa"],
         caption:
           "Solutions and notes following the NeetCode roadmap, including arrays, hash tables, strings, and more.",
         image: asset("leetcode-100.png"),
@@ -19,7 +20,8 @@ export const writingCollections = {
   },
   medium: {
     title: "Medium",
-    description: "Personal writing published on Medium.",
+    description:
+      "Writing about my experiments projects, and personal reflections.",
     entries: [
       {
         title: "Why I Felt Distant from Allah?",
