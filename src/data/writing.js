@@ -34,6 +34,19 @@ export const writingCollections = {
         href: "https://medium.com/@fajardios01/did-i-distance-myself-from-allah-4456f3814038",
         destination: "Read on Medium",
       },
+      {
+        title: "Customers Churn Prediction using Machine Learning",
+        tags: ["Machine Learning", "Churn Prediction", "Dqlab Academy"],
+        caption:
+          "In this article, I want to share what I learned about Customer Churn Prediction using Machine Learning.",
+        image: asset("ml-tutorial.png"),
+        imageAlt:
+          "step by step tutorial on how to predict customer churn using machine learning",
+        imageCredit:
+          "from https://academy.dqlab.id/main/package/practice/249?pf=0",
+        href: "https://medium.com/@fajardios01/customers-churn-prediction-using-machine-learning-993163fe2f31?sharedUserId=fajardios01",
+        destination: "Read on Medium",
+      },
     ],
   },
 };
