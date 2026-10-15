@@ -10,7 +10,7 @@ defineProps({
   <section id="work" class="page-section work-section">
     <div class="work-intro">
       <h1>Selected work</h1>
-      <p>Choose a field to see the projects inside.</p>
+      <p>These are some of my recent projects!</p>
     </div>
     <p v-if="!sections.length" class="work-state">
       No project categories are available yet.
