@@ -7,13 +7,33 @@ export const writingCollections = {
       "A collection of technical notes, tutorials, problem-solving guides, tools I use, and other technical writings covering software development, AI engineering, and computer vision.",
     entries: [
       {
+        title: "Data Structure and Algorithms",
+        tags: ["C++", "Algorithms", "Problem solving", "Bahasa"],
+        caption:
+          "A collection of notes and solutions for data structure and algorithms problems, including arrays, hash tables, strings, and more.",
+        image: asset("DSA.png"),
+        imageAlt: "Data Structure and Algorithms gitbook preview",
+        href: "https://fajardios.gitbook.io/algoritma-and-struktur-data",
+        destination: "Read on GitBook",
+      },
+      {
         title: "Leetcode 100",
         tags: ["Algorithms", "Problem solving", "Bahasa"],
         caption:
-          "Solutions and notes following the NeetCode roadmap, including arrays, hash tables, strings, and more.",
+          "A collection of notes and solutions for Leetcode problems, including arrays, hash tables, strings, and more.",
         image: asset("leetcode-100.png"),
         imageAlt: "Leetcode 100 GitBook introduction preview",
         href: "https://kamus-ku.gitbook.io/leetcode-100/",
+        destination: "Read on GitBook",
+      },
+      {
+        title: "Journey Backend Developer",
+        tags: ["Backend Development", "System Architecture"],
+        caption:
+          "A collection of notes and tutorials on backend development, including system architecture, database design, and more.",
+        image: asset("Backend-dev.png"),
+        imageAlt: "Back-dev gitbook preview",
+        href: "https://fajardios.gitbook.io/backend-developer",
         destination: "Read on GitBook",
       },
     ],

@@ -2,7 +2,6 @@ import { createRouter, createWebHistory } from "vue-router";
 import ExperienceSection from "./components/ExperienceSection.vue";
 import ContactSection from "./components/ContactSection.vue";
 import HeroSection from "./components/HeroSection.vue";
-import RoleWorkPage from "./views/RoleWorkPage.vue";
 import WorkPage from "./views/WorkPage.vue";
 import WritingPage from "./views/WritingPage.vue";
 
@@ -25,29 +24,7 @@ const router = createRouter({
       component: WritingPage,
       props: { collection: "medium" },
     },
-    {
-      path: "/work/data-analyst",
-      name: "work-data-analyst",
-      component: RoleWorkPage,
-      props: { roleId: "data-analyst" },
-    },
-    {
-      path: "/work/web-full-stack",
-      name: "work-web-full-stack",
-      component: RoleWorkPage,
-      props: { roleId: "web-full-stack" },
-    },
-    { path: "/work/nothing", redirect: "/work/web-full-stack" },
-    {
-      path: "/work/ai-computer-vision",
-      redirect: "/work/ai-computer-vision-engineer",
-    },
-    {
-      path: "/work/ai-computer-vision-engineer",
-      name: "work-ai-computer-vision",
-      component: RoleWorkPage,
-      props: { roleId: "ai-computer-vision-engineer" },
-    },
+    { path: "/work/:category", redirect: "/work" },
     { path: "/contact", name: "contact", component: ContactSection },
     { path: "/:pathMatch(.*)*", redirect: "/" },
   ],

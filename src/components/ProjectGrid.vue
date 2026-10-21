@@ -20,7 +20,7 @@ const visibleTools = (project) =>
     <p>{{ error }}</p>
   </div>
   <p v-else-if="!projects.length" class="work-state">
-    No projects are available for this role yet.
+    No projects are available yet.
   </p>
   <div v-else v-reveal class="project-grid">
     <button

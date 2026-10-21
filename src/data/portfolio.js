@@ -15,6 +15,7 @@ export const toolIcons = {
   vite: "/tool-icons/vite.svg",
   selenium: "/tool-icons/selenium.svg",
   matplotlib: "/tool-icons/matplotlib.svg",
+  fastapi: "/tool-icons/fastapi-original.svg",
 };
 
 const asset = (name) => new URL(`../thumb-porto/${name}`, import.meta.url).href;
@@ -88,6 +89,17 @@ export const projectSections = [
         tools: ["Python", "OpenCV", "Computer Vision"],
         url: "https://github.com/fnvrxx/Face-recognition-expression",
         urlLabel: "View GitHub repository",
+      },
+      {
+        title: "Smart Attendance System",
+        type: "Computer Vision",
+        year: "2026",
+        image: asset("smart-attendance.png"),
+        description:
+          "A facial recognition learning project built with Python, InsightFace, OpenCV, FastAPI, and PostgreSQL + pgvector. Register names, job titles, and faces through the terminal. Attendance is automatically recorded when a registered face is consistently recognized.",
+        tools: ["Python", "OpenCV", "postgresql", "fastapi"],
+        url: "https://lnkd.in/p/gRNstddF",
+        urlLabel: "View demo and Github repository",
       },
     ],
   },
