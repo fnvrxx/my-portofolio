@@ -110,7 +110,15 @@ onBeforeUnmount(() => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <ExternalLink :size="18" />
+            <img
+              v-if="project.urlIcon"
+              class="project-link-icon"
+              :src="project.urlIcon"
+              alt=""
+              width="18"
+              height="18"
+            />
+            <ExternalLink v-else :size="18" />
             {{ project.urlLabel || "Visit live project" }}
           </a>
         </div>
@@ -174,7 +182,8 @@ onBeforeUnmount(() => {
   box-shadow: 2px 2px 0 var(--ink);
 }
 
-.project-link svg {
+.project-link svg,
+.project-link-icon {
   flex: 0 0 auto;
 }
 </style>

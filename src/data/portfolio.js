@@ -1,3 +1,5 @@
+import githubIcon from "../icon/github.png";
+
 export const toolIcons = {
   Laravel: "/tool-icons/laravel.svg",
   Python: "/tool-icons/python.svg",
@@ -16,6 +18,7 @@ export const toolIcons = {
   selenium: "/tool-icons/selenium.svg",
   matplotlib: "/tool-icons/matplotlib.svg",
   fastapi: "/tool-icons/fastapi-original.svg",
+  pytorch: "/tool-icons/pytorch.svg",
 };
 
 const asset = (name) => new URL(`../thumb-porto/${name}`, import.meta.url).href;
@@ -89,6 +92,7 @@ export const projectSections = [
         tools: ["Python", "OpenCV", "Computer Vision"],
         url: "https://github.com/fnvrxx/Face-recognition-expression",
         urlLabel: "View GitHub repository",
+        urlIcon: githubIcon,
       },
       {
         title: "Smart Attendance System",
@@ -100,6 +104,42 @@ export const projectSections = [
         tools: ["Python", "OpenCV", "postgresql", "fastapi"],
         url: "https://lnkd.in/p/gRNstddF",
         urlLabel: "View demo and Github repository",
+      },
+      {
+        title: "YOLO11n vs YOLO26n",
+        type: "Computer Vision",
+        year: "2026",
+        image: asset("yolo_11_vs_26.png"),
+        description:
+          "Understanding How YOLO (You Only Look Once) Works and Comparing the Differences Between YOLO11 and YOLO26 Using Their Nano (n) Models.",
+        tools: ["Python", "OpenCV"],
+        url: "https://github.com/fnvrxx/DeskVision-YOLOv11-vs-YOLOv26",
+        urlLabel: "View GitHub repository",
+        urlIcon: githubIcon,
+      },
+      {
+        title: "ViT from Scratch",
+        type: "Computer Vision",
+        year: "2026",
+        image: asset("ViT-preview.png"),
+        description:
+          "Understanding the Architecture of Vision Transformer (ViT) Models and Conducting Experiments to Compare Their Performance with Convolutional Neural Networks (CNNs).",
+        tools: ["Python", "pytorch"],
+        url: "https://github.com/fnvrxx/ViT-from-Scratch",
+        urlLabel: "View GitHub repository",
+        urlIcon: githubIcon,
+      },
+      {
+        title: "Train LLM from Scratch",
+        type: "AI Engineer",
+        year: "2026",
+        image: asset("train-llm-for-small-device.png"),
+        description:
+          "This project is based on the original work by FareedKhan-dev. I modified and improved it to run without a GPU, making it accessible for educational purposes only. (M1 core and RAM 8GB)",
+        tools: ["Python", "pytorch"],
+        url: "https://github.com/fnvrxx/train-llm-from-scratch/tree/experiment/small-llm",
+        urlLabel: "View GitHub repository",
+        urlIcon: githubIcon,
       },
     ],
   },
@@ -131,17 +171,17 @@ export const projectSections = [
         documentLabel: "View proposal",
         certificate: competitionAsset("sertif.png"),
       },
-      {
-        title: "EADS AI Prototyping",
-        type: "AI product prototype",
-        year: "2024",
-        image: asset("in-eads.png"),
-        description:
-          "An interface prototype for a generative AI concept developed for a PKM competition.",
-        tools: ["Figma", "Prototyping"],
-        url: "https://www.figma.com/proto/m21wkVJ8Lr9ZyB9lz7Xz7B/PKM?node-id=434-2&p=f&viewport=-2127%2C1301%2C0.25&t=sUvFDDiyvXabCXNB-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=434%3A2&page-id=57%3A2",
-        urlLabel: "View Figma prototype",
-      },
+      // {
+      //   title: "EADS AI Prototyping",
+      //   type: "AI product prototype",
+      //   year: "2024",
+      //   image: asset("in-eads.png"),
+      //   description:
+      //     "An interface prototype for a generative AI concept developed for a PKM competition.",
+      //   tools: ["Figma", "Prototyping"],
+      //   url: "https://www.figma.com/proto/m21wkVJ8Lr9ZyB9lz7Xz7B/PKM?node-id=434-2&p=f&viewport=-2127%2C1301%2C0.25&t=sUvFDDiyvXabCXNB-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=434%3A2&page-id=57%3A2",
+      //   urlLabel: "View Figma prototype",
+      // },
       {
         title: "Pomodoro",
         type: "Website",
