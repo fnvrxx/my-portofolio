@@ -9,10 +9,11 @@ import portrait from "../icon/my-face-web.jpg";
     <div class="hero-copy">
       <div v-reveal class="hero-copy-inner">
         <p class="hero-kicker">Hi, I'm Fajar Adie Santosa.</p>
-        <h1 id="hero-title">Software<br />Developer</h1>
+        <h1 id="hero-title">AI<br />Engineer</h1>
         <p class="hero-description">
-          I build backend systems and apply AI, especially computer vision, to
-          practical problems.
+          Mathematics graduate from Institut Teknologi Sepuluh Nopember (ITS).
+          I'm passionate about pursuing research in deep learning and large
+          language models (LLMs).
         </p>
         <div class="hero-actions">
           <RouterLink class="action-button action-button-primary" to="/work">
@@ -80,7 +81,10 @@ import portrait from "../icon/my-face-web.jpg";
         <path class="cat-belly" d="M13 21h7v6h-7z" />
         <path d="M9 26h4v3H8v-2h1zm11 0h4v1h1v2h-5z" />
         <path d="M6 5h5v3h10V5h5v5h2v9h-2v2H6v-2H4v-9h2z" />
-        <path class="cat-fur" d="M8 7h2v4H8zm15 0h1v4h-2V7zM6 11h20v7h-2v1H8v-1H6z" />
+        <path
+          class="cat-fur"
+          d="M8 7h2v4H8zm15 0h1v4h-2V7zM6 11h20v7h-2v1H8v-1H6z"
+        />
         <path class="cat-ear" d="M8 8h2v3H8zm14 0h2v3h-2z" />
         <path class="cat-eye" d="M10 14h3v2h-3zm10 0h3v2h-3z" />
         <path class="cat-nose" d="M15 16h2v2h-2z" />

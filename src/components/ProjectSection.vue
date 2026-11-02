@@ -1,23 +1,26 @@
 <script setup>
 import { computed, ref } from "vue";
+import { useRouter } from "vue-router";
 import ProjectGrid from "./ProjectGrid.vue";
 import ProjectModal from "./ProjectModal.vue";
 import { toolIcons } from "../data/portfolio";
 
 const props = defineProps({
   sections: { type: Array, required: true },
+  category: { type: String, default: "all" },
 });
 
+const router = useRouter();
 const selectedProject = ref(null);
 const searchQuery = ref("");
-const activeCategory = ref("all");
+const activeCategory = computed(() => props.category);
 const projects = computed(() =>
   props.sections
     .flatMap((section) =>
       section.projects.map((project) => ({
         ...project,
         role: section.title,
-        categoryId: section.id,
+        categoryId: section.slug || section.id,
       })),
     )
     .sort((a, b) => Number(b.year) - Number(a.year)),
@@ -53,7 +56,11 @@ const hasActiveFilters = computed(
 );
 const clearFilters = () => {
   searchQuery.value = "";
-  activeCategory.value = "all";
+  if (activeCategory.value !== "all") router.push("/work");
+};
+const changeCategory = (event) => {
+  const category = event.target.value;
+  router.push(category === "all" ? "/work" : `/${category}`);
 };
 </script>
 
@@ -75,21 +82,24 @@ const clearFilters = () => {
       </label>
       <label class="work-control" for="project-category">
         <span>Filter by field</span>
-        <select id="project-category" v-model="activeCategory">
+        <select
+          id="project-category"
+          :value="activeCategory"
+          @change="changeCategory"
+        >
           <option value="all">All fields</option>
-          <option v-for="section in sections" :key="section.id" :value="section.id">
+          <option
+            v-for="section in sections"
+            :key="section.id"
+            :value="section.slug || section.id"
+          >
             {{ section.title }}
           </option>
         </select>
       </label>
     </div>
-    <div v-if="projects.length" class="work-results">
-      <p role="status">
-        {{ filteredProjects.length }}
-        {{ filteredProjects.length === 1 ? "project" : "projects" }} found
-      </p>
+    <div v-if="hasActiveFilters && filteredProjects.length" class="work-results">
       <button
-        v-if="hasActiveFilters && filteredProjects.length"
         class="work-clear"
         type="button"
         @click="clearFilters"

@@ -63,21 +63,22 @@ export const projectSections = [
         tools: ["Python", "Pandas", "selenium", "Scikit-learn", "matplotlib"],
         document: documentAsset("PRESENTASI DATA ANALYST.pdf"),
       },
-      {
-        title: "SPBU Queueing System Analysis",
-        type: "Operations research study",
-        year: "2024",
-        image: asset("analisis-antrian-spbu.png"),
-        description:
-          "A G/G/1 queueing analysis based on direct observation of motorcycle service at SPBU Keputih, Surabaya. The study found low average waiting time under normal conditions, but 97.63% server utilization leaves little spare capacity and makes the system vulnerable to traffic surges.",
-        tools: ["Python", "matplotlib"],
-        document: documentAsset("PPT SURVEI ANALISIS ANTRIAN.pdf"),
-      },
+      // {
+      //   title: "SPBU Queueing System Analysis",
+      //   type: "Operations research study",
+      //   year: "2024",
+      //   image: asset("analisis-antrian-spbu.png"),
+      //   description:
+      //     "A G/G/1 queueing analysis based on direct observation of motorcycle service at SPBU Keputih, Surabaya. The study found low average waiting time under normal conditions, but 97.63% server utilization leaves little spare capacity and makes the system vulnerable to traffic surges.",
+      //   tools: ["Python", "matplotlib"],
+      //   document: documentAsset("PPT SURVEI ANALISIS ANTRIAN.pdf"),
+      // },
     ],
   },
 
   {
     id: "ai-computer-vision-engineer",
+    slug: "ai-engineer",
     title: "AI Engineer & Computer Vision",
     description:
       "AI Engineer specializing in Computer Vision, developing intelligent solutions for image processing, visual recognition, and object detection. Experienced in end-to-end deployment.",

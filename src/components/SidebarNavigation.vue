@@ -29,7 +29,7 @@ const primaryNavigation = [
       </RouterLink>
       <RouterLink
         to="/work"
-        :class="{ 'is-active': route.path.startsWith('/work') }"
+        :class="{ 'is-active': route.meta.work }"
         @click="emit('navigate')"
       >
         Selected work

@@ -22,7 +22,7 @@ const visibleTools = (project) =>
   <p v-else-if="!projects.length" class="work-state">
     No projects are available yet.
   </p>
-  <div v-else v-reveal class="project-grid">
+  <div v-else class="project-grid">
     <button
       v-for="project in projects"
       :key="project.title"
